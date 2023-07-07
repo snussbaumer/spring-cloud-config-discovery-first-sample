@@ -6,8 +6,7 @@ spring:
         enabled: true
         service-id: config-server
   config:
-    import: "configserver:"                           # does not work
-#    import: "configserver:http://127.0.0.1:8001"     # works
+    import: "configserver:"
   main.web-application-type: none
 
 eureka:
