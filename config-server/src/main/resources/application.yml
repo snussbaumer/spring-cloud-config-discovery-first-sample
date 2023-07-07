@@ -1,0 +1,18 @@
+spring:
+  application.name: config-server
+  profiles.active: native
+  cloud.config.server.native.search-locations: classpath:/config-to-serve
+
+server.port: 8001
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+  client:
+    fetch-registry: true
+    region: eu-fr
+    serviceUrl.defaultZone: http://127.0.0.1:8002/eureka/
+
+logging.level:
+  org.springframework.cloud.config.server: TRACE

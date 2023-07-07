@@ -1,0 +1,24 @@
+spring:
+  application.name: test-application
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+  config:
+    import: "configserver:"                           # does not work
+#    import: "configserver:http://127.0.0.1:8001"     # works
+  main.web-application-type: none
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+  client:
+    fetch-registry: true
+    region: eu-fr
+    serviceUrl.defaultZone: http://127.0.0.1:8002/eureka/
+
+logging.level:
+  org.springframework.boot.context.config: TRACE
+  org.springframework.boot.env.PropertySourcesLoader: TRACE
